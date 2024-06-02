@@ -1,6 +1,11 @@
 #include <iostream>
 #include <vector>
 #include <list>
+
+#define CLASSPOINTER
+#ifdef CLASSPOINTER
+	#include "class_pointer.h"
+#endif
 using namespace std;
 
 int main() {
@@ -57,6 +62,19 @@ int main() {
 
 	*mewt = 4;
 	cout << *mewt;
+
+	const std::string& whatsup = "sup gee";
+	cout << whatsup;
+	// pointer can be used as array and used as a memory indicator.
+	char* example;
+	example = new char[4];
+	example[0] = '1';
+
+	// this is struct class
+	Vector3* p_vectors;
+	p_vectors = new Vector3[5]; // initializing arrays.
+
+
 
 	return 0;
 }
