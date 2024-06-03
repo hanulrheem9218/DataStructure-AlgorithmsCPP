@@ -24,10 +24,13 @@ int main() {
 	sup.push_back(2);
 	sup.push_back(4);
 	list<int> sp = list<int>();
+	const int* const supsd = 0;
 
 	char c[] = { 'c','a','t' };
 	//char sup[10] = { '3','4','5' };
-	const char* fds = "fdfsd";
+	const char*  fds = "fdfsd";
+	//fds = "fasfds";
+	
 	char di[] = "fdsafds";
 	int length = strlen(di);
 	for (int i = 0; i < length; i++) {
@@ -69,6 +72,11 @@ int main() {
 	char* example;
 	example = new char[4];
 	example[0] = '1';
+
+	int*  wtf = 0;
+	//*wtf = 2;
+	wtf = new int;
+	*wtf = 4;
 
 	// this is struct class
 	Vector3* p_vectors;
