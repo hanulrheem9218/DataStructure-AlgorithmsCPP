@@ -2,7 +2,12 @@
 #include <iostream>
 #include <string>
 #include <cstdlib>
-#include "SNode.h"
+
+template <typename E>
+struct SNode {
+	E elem;
+	SNode<E>* next;
+};
 //if it uses template it must be in the same class. 
 template <typename E> 
 class SLinkedList
