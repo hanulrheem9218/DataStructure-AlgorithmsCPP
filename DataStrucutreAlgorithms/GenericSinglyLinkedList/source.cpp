@@ -11,9 +11,9 @@ int main()
 	}
 	
 	for (int j = 0; j < max; j++) {
-		stringList->addFront(std::to_string(j));
+		stringList->addFront(std::to_string(j) + "F");
 	}
-	std::cout << (int)'A' << std::endl;
+//	std::cout << (int)'A' << std::endl;
 	intList->printResults();
 	stringList->printResults();
 	return 0;

@@ -22,6 +22,6 @@ public:
 	//custom method
 	void printNodes();
 private:
-	StringNode* head; // pointer to the head of list.
+	StringNode* m_head; // pointer to the head of list.
 };
 

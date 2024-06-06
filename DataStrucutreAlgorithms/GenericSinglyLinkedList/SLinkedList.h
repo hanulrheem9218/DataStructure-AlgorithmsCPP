@@ -70,9 +70,9 @@ template<typename E>
 inline void SLinkedList<E>::printResults()
 {
 	if (empty()) return;
-	while (p_head->next != NULL) {
 		SNode<E>* curr = p_head;
+	while (curr != NULL) {
 		std::cout << curr->elem << std::endl;
-		p_head = curr->next;
+		curr = curr->next;
 	}
 }

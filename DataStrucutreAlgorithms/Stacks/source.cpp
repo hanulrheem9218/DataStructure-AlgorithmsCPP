@@ -3,6 +3,42 @@
 #include "ArrayStack.h"
 #include "LinkedStack.h"
 using namespace std;
+
+vector<string> getHtmlTags() {
+    vector<string> tags;
+    while (std::cin) {
+        string line;
+        std::getline(cin,line);
+        int pos = 0;
+        int ts = line.find("<", pos);
+        {
+            while (ts != string::npos) {
+                int te = line.find(">", ts + 1);
+                tags.push_back(line.substr(ts, te - ts + 1));
+                pos = te + 1;
+                ts = line.find("<", pos);
+            }
+        }
+    }
+    return tags;
+}
+bool isHtmlMatched(const vector<string>& tags) {
+    LinkedStack S;
+    typedef vector<string>::const_iterator Iter;
+    for (Iter p = tags.begin(); p != tags.end(); ++p) {
+        if (p->at(1) != '/') S.push(*p);
+        else {
+            if (S.empty()) return false;
+            string open = S.top().substr(1);
+            string close = p->substr(2);
+            if (open.compare(close) != 0) return false;
+            else S.pop();
+        }
+    }
+    if (S.empty()) return true;
+    else return false;
+}
+
 int main()
 {
     std::cout << "Stack Demonstration!\n";
@@ -12,6 +48,8 @@ int main()
     //push()
     //pop()
     //top()
+    auto setence = getHtmlTags();
+    isHtmlMatched(setence);
 
     cout << "array stack" << endl;
     ArrayStack<int> A;
