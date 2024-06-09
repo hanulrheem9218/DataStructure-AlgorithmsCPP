@@ -44,7 +44,7 @@ inline const E& ArrayStack<E>::top() const
 {
 	if (empty()) {
 		std::cout << "Top of empty Stack";
-		return NULL;
+		//return NULL;
 	}
 	return S[t];
 	// TODO: insert return statement here

@@ -13,6 +13,6 @@ int main()
     linkedList.printResult();
     linkedList.listReserve(linkedList);
     linkedList.printResult();
-
+    linkedList.~DoublyLinkedList();
     return 0;
 }
